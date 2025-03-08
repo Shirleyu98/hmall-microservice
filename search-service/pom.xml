@@ -14,6 +14,9 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+
+        <elasticsearch.version>7.17.3</elasticsearch.version>
+        <spring-data-elasticsearch.version>4.4.12</spring-data-elasticsearch.version>
     </properties>
 
     <dependencies>
@@ -21,6 +24,12 @@
         <dependency>
             <groupId>com.heima</groupId>
             <artifactId>hm-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!--api-->
+        <dependency>
+            <groupId>com.heima</groupId>
+            <artifactId>hm-api</artifactId>
             <version>1.0.0</version>
         </dependency>
         <!--web-->
@@ -63,9 +72,25 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
+
+        <!-- Spring Data Elasticsearch -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-elasticsearch</artifactId>
+            <version>${spring-data-elasticsearch.version}</version>
+        </dependency>
+
+        <!-- Elasticsearch Client -->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>${elasticsearch.version}</version>
         </dependency>
     </dependencies>
     <build>

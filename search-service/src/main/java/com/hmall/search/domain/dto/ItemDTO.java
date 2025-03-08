@@ -1,4 +1,4 @@
-package com.hmall.search.dto;
+package com.hmall.search.domain.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

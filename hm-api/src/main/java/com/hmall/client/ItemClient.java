@@ -7,10 +7,7 @@ import com.hmall.dto.ItemDTO;
 import com.hmall.dto.OrderDetailDTO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,6 +17,10 @@ import java.util.List;
         fallbackFactory = ItemClientFallback.class
                 )
 public interface ItemClient {
+
+    @ApiOperation("根据id查询商品")
+    @GetMapping("/items/{id}")
+    ItemDTO queryItemById(@PathVariable("id") Long id);
 
     @GetMapping("/items")
     List<ItemDTO> queryItemByIds(@RequestParam("ids") Collection<Long> ids);
