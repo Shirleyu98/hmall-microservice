@@ -1,0 +1,30 @@
+server:
+  port: 8082
+  tomcat:
+    threads:
+      max: 50 # 允许的最大线程数
+    accept-count: 50 # 最大排队等待数量
+    max-connections: 100 # 允许的最大连接
+feign:
+  okhttp:
+    enabled: true
+  sentinel:
+    enabled: true
+hm:
+  swagger:
+    title: 购物车接口服务文档
+    package: com.hmall.cart.controller
+  db:
+    database: hm-cart
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+      http-method-specify: true
+  rabbitmq:
+    host: 192.168.255.130 # 你的虚拟机IP
+    port: 5672 # 端口
+    virtual-host: / # 虚拟主机
+    username: itheima # 用户名
+    password: 123321 # 密码
