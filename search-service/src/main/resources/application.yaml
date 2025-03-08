@@ -1,0 +1,17 @@
+server:
+  port: 8087
+  tomcat:
+    threads:
+      max: 50 # 允许的最大线程数
+    accept-count: 50 # 最大排队等待数量
+    max-connections: 100 # 允许的最大连接
+    connection-timeout: 30000 # 延迟时间
+feign:
+  okhttp:
+    enabled: true
+hm:
+  swagger:
+    title: 购物车商品搜索服务文档
+    package: com.hmall.search.controller
+  db:
+    database: hm-item
