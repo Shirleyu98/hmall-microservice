@@ -26,8 +26,10 @@ public class ItemListener {
     @Autowired
     private ItemClient itemClient;
 
-    @Autowired
-    private ElasticsearchRestTemplate elasticsearchRestTemplate;
+
+//
+//    @Autowired
+//    private ElasticsearchRestTemplate elasticsearchRestTemplate;
 
 
     @RabbitListener(bindings = @QueueBinding(

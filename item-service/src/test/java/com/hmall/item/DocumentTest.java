@@ -44,6 +44,7 @@ import java.util.Map;
 @SpringBootTest(properties = "spring.profiles.active=local")
 public class DocumentTest {
 
+    @Autowired
     private RestHighLevelClient client;
     @Autowired
     private IItemService itemService;
