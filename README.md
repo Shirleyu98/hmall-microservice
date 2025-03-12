@@ -124,6 +124,6 @@ Run the following command to start the infrastructure components:
 ```sh
 docker compose -f docker-compose-infra.yml up -d
 ```
-
+![screenshot](Snipaste_2025-03-12_16-24-52.png)
 ---
 
