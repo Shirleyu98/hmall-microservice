@@ -11,12 +11,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.extern.slf4j.XSlf4j;
 import org.elasticsearch.action.search.SearchResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Api(tags = "搜索相关接口")
 @RestController
@@ -50,11 +49,11 @@ public class SearchController {
          }
     }
 
-//    @ApiOperation("根据过滤条件查询")
-//    @PostMapping("/filters")
-//    public PageDTO<ItemDTO> getFilters(ItemPageQuery query){
-//
-//        return searchService.getFilters();
-//
-//    }
+    @ApiOperation("根据过滤条件查询")
+    @PostMapping("/filters")
+    public Map<String, List<String>> getFilters(@RequestBody ItemPageQuery query) throws IOException {
+
+        return searchService.getFilters(query);
+
+    }
 }
